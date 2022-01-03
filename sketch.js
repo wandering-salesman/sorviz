@@ -11,8 +11,6 @@ var timer_arr = [];
 var time_taken = 0;
 var pause = false;
 
-
-
 //each bar has following properties
 class Element {
   constructor(val) {
@@ -25,15 +23,15 @@ class Element {
   draw(i, color = 255) {
     fill(color);
     if (this.compare == true) {
-      fill(0, 0, 255);
+      fill(255, 51, 102);
     }
     if (this.swap == true) {
-      fill(255, 0, 0);
+      fill(51, 102, 255);
     }
     stroke(0);
     this.swap = false;
-    this.compare = false; //reset the vals as i only want one time display
-    this.pivot = false; //waste delete it later(arr.pivot prop)
+    this.compare = false; // reset the vals as i only want one time display
+    this.pivot = false; // waste delete it later(arr.pivot prop)
     rect(i * thick, height - this.val + 1, thick, this.val);
     if (thick > 5) {
       noStroke(); //mix with rect
@@ -43,9 +41,7 @@ class Element {
   }
 }
 
-
-
-//function name holder
+// function name holder
 const algo_dict = {
   bubbleSort: bubbleSort,
   selectionSort: selectionSort,
@@ -59,12 +55,10 @@ const timer_algo = {
   quickSort: quickSortLomuto_t,
 };
 
-
-
 function setup() {
   print_hello();
   createCanvas(width, height);
-  var btns = document.querySelectorAll(".clickable"); //all buttons
+  var btns = document.querySelectorAll(".clickable"); // all buttons
   // console.log(btns);
   for (btn of btns) {
     btn.addEventListener("click", function () {
@@ -111,8 +105,6 @@ function setup() {
   // console.log(frameRate());
 }
 
-
-
 function time_this_algo(algo) {
   //timer start
   var t0 = window.performance.now();
@@ -135,8 +127,6 @@ function time_this_algo(algo) {
   //timer stop
   //store the diff
 }
-
-
 
 function slider_control() {
   var size_slider = document.getElementById("data_size");
@@ -188,7 +178,6 @@ function slider_control() {
   };
 }
 
-
 function setup_arr() {
   for (let i = 0; i < len_arr; i++) {
     push_value = random(thick, height - thick); //ellipse height
@@ -199,11 +188,9 @@ function setup_arr() {
   sort_the_arr(sorted_arr);
 }
 
-
 function start_sort(algo) {
   loop_counter = algo_dict[algo](arr);
 }
-
 
 function draw() {
   background(0);
@@ -218,7 +205,7 @@ function draw_arr() {
   for (let i = 0; i < arr.length; i++) {
     arr[i].draw(i);
     if (sorted_arr[i] == arr[i].val) {
-      arr[i].draw(i, color(0, 255, 0));
+      arr[i].draw(i, color(102, 255, 102));
     }
   }
 }

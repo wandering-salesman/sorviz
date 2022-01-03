@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background: #000000;
+}
+
+
+nav {
+    background: #f3fcff;
+    width: 100%;
+}
+
+
+nav:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+nav ul {
+    list-style: none;
+    position: relative;
+    align-items: center;
+}
+
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 25px;
+    color: #0d0d0d;
+}
+
+
+nav ul li a {
+    color: #0d0d0d;
+    text-decoration: none;
+    line-height: 85px;
+    font-size: 21px;
+    padding: 10px 8px;
+    text-align: center;
+}
+
+.clickable:hover {
+    border-bottom: 2px solid #ff2e7e;
+    transition: 300ms ease-in;
+    cursor: pointer;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 80px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav ul :hover > ul {
+    transition: 500ms ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li {
+    background-color: #f3fcff;
+    position: relative;
+    margin: 0px;
+    width: 25%vw;
+    float: none;
+    display: list-item;
+    border-bottom: 3px solid #00ffff;
+}
+
+.items {
+    margin: 5px 5px 5px 5px;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: 0%;
+}
+#header {
+    border-bottom: 3px solid #00ffff;
+}
+
+#header:hover {
+    color: #ff2e7e;
+    transition: 100ms ease-out;
+}
+
+.range-input {
+    background: #ff69a2;
+    -webkit-appearance: none;
+    height: 2px;
+    outline: none;
+    border-radius: 2px;
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ff2e7e;
+    cursor: pointer;
+}
+
+.range-input::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ff2e7e;
+    cursor: pointer;
+}
